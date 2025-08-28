@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+backend:
+build: ./backend
+image: divyanshuchauhan1012/flask-backend:latest
+container_name: flask-backend
+ports:
+- "5000:5000"
+
+
+frontend:
+build: ./frontend
+image: divyanshuchauhan1012/express-frontend:latest
+container_name: express-frontend
+ports:
+- "3000:3000"
+depends_on:
+- backend
